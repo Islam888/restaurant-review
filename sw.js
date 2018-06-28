@@ -30,7 +30,7 @@ let paths = [
 //install service worker and create a new cache
 self.addEventListener('install', function(event) {
     console.log('installing worker');
-    event.waitUntil(caches.open(version + 'core')
+    event.waitUntil(caches.open(cacheName + 'core')
         .then(function(cache) {
             return cache.addAll(paths);
         })
