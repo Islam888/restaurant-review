@@ -27,47 +27,57 @@ let paths = [
     ];
 
 
-//install service worker and create a new cache
-self.addEventListener('install', function(event) {
-    console.log('installing worker');
-    event.waitUntil(caches.open(cacheName + 'core')
-        .then(function(cache) {
-            return cache.addAll(paths);
-        })
-        .then(function() {
-            console.log('installation complete');
-        })
-    );
+// Install and create a new cache.
+
+self.addEventListener('install', function(e) {
+  console.log('Installing - ServiceWorker');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      console.log('Caching - ServiceWorker');
+      return cache.addAll(paths);
+    })
+    .then(function() {
+      console.log('Installation complete');
+    })
+  );
 });
 
-// fetch updates from the network
-self.addEventListener('fetch', function(event) {
-    console.log('fetch updates from the network');
-    
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
-    );
+
+
+// Feth from the network.
+
+self.addEventListener('fetch', function(e) {
+  console.log('Fetch - ServiceWorker');
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
 });
 
-// activate new cache and delete the old cache
+
+
+
+// Activate new cache and delete the old cache.
+
 self.addEventListener('activate', function(event) {
-    console.log('activate new cache');
+    console.log('Activate new cache');
     
     event.waitUntil(
         caches.keys().then(function(cacheNames) {
             return Promise.all(
-                cacheNames.filter(function(cacheName) {
+                cacheNames.map(function(cacheName) {
                     return cacheName.startsWith('r-') && cacheName != version;
                 }).map(function(cacheName) {
                     return cache.delete(cacheName);
                 })
-            )
-        }).catch(function (error) {
-            // on first run, it should log this error
-            console.log('there is no old cache to be deleted');
+               )
+             }).catch(function (error) {
+            // Log this if there is no cache on first run.
+
+            console.log('No old cache to delete');
             return
         })
-    );
-});
+       );
+     });
+
