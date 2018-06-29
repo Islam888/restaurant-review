@@ -40,7 +40,8 @@ let paths = [
     '/https://SIonut0122.github.io/restaurant-review',
     './sw.js',
     '/https://github.com/SIonut0122/restaurant-review',
-    'https://sionut0122.github.io/'
+    'https://sionut0122.github.io/',
+    'https://sionut0122.github.io/restaurant-review/index.html'
     ];
 
 
