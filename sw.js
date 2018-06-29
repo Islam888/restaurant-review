@@ -39,7 +39,8 @@ let paths = [
     '/https://sionut0122.github.io/restaurant-review/index.html',
     '/https://SIonut0122.github.io/restaurant-review',
     './sw.js',
-    '/https://github.com/SIonut0122/restaurant-review'
+    '/https://github.com/SIonut0122/restaurant-review',
+    'https://sionut0122.github.io/'
     ];
 
 
