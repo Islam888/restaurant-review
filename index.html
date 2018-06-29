@@ -49,7 +49,7 @@
    <script>
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('./restaurant-review/sw.js', {scope: './restaurant-review/'})
+           .register('./sw.js', {scope: './sw.js/'})
            .then(function() { console.log("Service Worker Registered"); });
 }
 </script>
