@@ -5,25 +5,25 @@ var cacheName = 'r-v1';
 // data to catch
 
 let paths = [
-    './',
-    'https://github.com/SIonut0122/restaurant-review/index.html',
-    'https://github.com/SIonut0122/restaurant-review/restaurant.html?',
-    'https://github.com/SIonut0122/restaurant-review/js/dbhelper.js',
-    'https://github.com/SIonut0122/restaurant-review/js/main.js',
-    'https://github.com/SIonut0122/restaurant-review/js/restaurant_info.js',
-    'https://github.com/SIonut0122/restaurant-review/css/styles.css',
-    'https://github.com/SIonut0122/restaurant-review/data/restaurants.json',
-     'https://github.com/SIonut0122/restaurant-review/?homescreen=1',
-    'https://github.com/SIonut0122/restaurant-review/img/1.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/2.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/3.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/4.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/5.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/6.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/7.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/8.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/9.jpg',
-    'https://github.com/SIonut0122/restaurant-review/img/10.jpg'
+    '/',
+    './index.html',
+    './restaurant.html?',
+    './js/dbhelper.js',
+    './js/main.js',
+    './js/restaurant_info.js',
+    './css/styles.css',
+    './data/restaurants.json',
+     '/?homescreen=1',
+    './img/1.jpg',
+    './img/2.jpg',
+    './img/3.jpg',
+    './img/4.jpg',
+    './img/5.jpg',
+    './img/6.jpg',
+    './img/7.jpg',
+    './img/8.jpg',
+    './img/9.jpg',
+    './img/10.jpg'
     ];
 
 
