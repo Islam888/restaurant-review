@@ -763,7 +763,11 @@ nav h1 a {
     margin-left: 17px;
   }
   #restaurant-hours {
-    margin-left: 80px;
+    margin-left: 40px;
+    text-align: left;
+  }
+  #restaurant-address {
+     margin-left: -27px;
   }
   .inside #map-container {
     display: inherit;
@@ -778,10 +782,14 @@ nav h1 a {
   }
   .inside #footer {
     position: absolute;
-    bottom: -400px;
+    bottom: -380px;
     width: inherit;
     margin-left: 6px;
     height: 5px;
+
+  }
+  nav h1 {
+    padding:10px;
   }
 }
 
