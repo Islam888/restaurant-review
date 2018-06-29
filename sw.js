@@ -5,7 +5,7 @@ var cacheName = 'r-v1';
 // data to catch
 
 let paths = [
-    '/',
+    './',
     './index.html',
     './restaurant.html?',
     './js/dbhelper.js',
@@ -25,7 +25,8 @@ let paths = [
     './img/9.jpg',
     './img/10.jpg',
     '/https://sionut0122.github.io/restaurant-review/', 
-    'https://sionut0122.github.io/restaurant-review/index.html' 
+    '/https://sionut0122.github.io/restaurant-review/index.html',
+    './sw.js'
     ];
 
 
