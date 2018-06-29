@@ -24,7 +24,7 @@ let paths = [
     './img/8.jpg',
     './img/9.jpg',
     './img/10.jpg',
-    '/https://sionut0122.github.io/restaurant-review/', 
+    './restaurant-review/', 
     '/https://sionut0122.github.io/restaurant-review/index.html',
     './sw.js'
     ];
