@@ -169,7 +169,7 @@ nav h1 a {
 
 #map {
   height: 400px;
-  width: 101%;
+  width: 100%;
   background-color: #ccc;
 }
 
@@ -177,7 +177,7 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 
 .filter-options {
-  width: 100%;
+  width: auto;
   height: 50px;
   background-color: #3397DB;
   align-items: center;
