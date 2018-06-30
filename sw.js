@@ -51,7 +51,7 @@ self.addEventListener('install', function(e) {
     })
     .then(function() {
       console.log('Installation complete');
-    }).catch(function(error) {console.log(error);}
+    }).catch(function(error) {console.log(error);})
   );
 });
 
