@@ -1,4 +1,6 @@
-const staticCacheName = 'review-cache-v1';
+const cacheVer = 'review-cache-v1
+
+
 const assets = [
   './',
   'index.html',
@@ -35,7 +37,7 @@ const assets = [
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(staticCacheName)
+    caches.open(cacheVer)
       .then( (cache) => {
         return cache.addAll(assets);
       })
@@ -49,7 +51,7 @@ self.addEventListener('activate', function (event) {
             return Promise.all(
                 cacheNames.filter(function (cacheName) {
                     return cacheName.startsWith('review-') &&
-                        cacheName != staticCacheName;
+                        cacheName != cacheVer;
                 }).map(function (cacheName) {
                     return caches.delete(cacheName);
                 })
