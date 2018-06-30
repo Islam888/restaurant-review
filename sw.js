@@ -1,18 +1,12 @@
 
-var cacheName = 'r-v1';
+const cacheName = 'r-v1';
 
 
 // data to catch
 
-let paths = [
+const paths = [
     './',
     'index.html',
-    './restaurant.html?',
-    './js/dbhelper.js',
-    './js/main.js',
-    './js/restaurant_info.js',
-    './css/styles.css',
-    './data/restaurants.json',
     'restaurant.html?id=1',
     'restaurant.html?id=2',
     'restaurant.html?id=3',
@@ -23,7 +17,12 @@ let paths = [
     'restaurant.html?id=8',
     'restaurant.html?id=9',
     'restaurant.html?id=10',
-    '/?homescreen=1',
+    './restaurant.html?',
+    './js/dbhelper.js',
+    './js/main.js',
+    './css/styles.css',
+    './js/restaurant_info.js',
+    './data/restaurants.json',
     './img/1.jpg',
     './img/2.jpg',
     './img/3.jpg',
@@ -35,9 +34,8 @@ let paths = [
     './img/9.jpg',
     './img/10.jpg',
     './img/favicon.png',
-    './restaurant-review/', 
-    '/https://sionut0122.github.io/restaurant-review/index.html',
-    'https://SIonut0122.github.io/restaurant-review'
+    './restaurant-review/'
+    
     ];
 
 
