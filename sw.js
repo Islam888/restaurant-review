@@ -1,10 +1,5 @@
-
-var cacheName = 'r-v1';
-
-
-// data to catch
-
-let paths = [
+const staticCacheName = 'review-cache-v1';
+const assets = [
   './',
   'index.html',
   'restaurant.html?id=1',
@@ -34,61 +29,43 @@ let paths = [
   './img/9.jpg',
   './img/10.jpg',
   './img/favicon.png',
- 
+  'https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600',
+  'https://fonts.googleapis.com/css?family=Montserrat:600'
 ];
 
-
-// Install and create a new cache.
-
-self.addEventListener('install', function(e) {
-  console.log('Installing - ServiceWorker');
-  e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      console.log('Caching - ServiceWorker');
-      return cache.addAll(paths);
-    })
-    .then(function() {
-      console.log('Installation complete');
-    })
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(staticCacheName)
+      .then( (cache) => {
+        return cache.addAll(assets);
+      })
   );
 });
 
-
-
-// Feth from the network.
-
-self.addEventListener('fetch', function(e) {
-  console.log('Fetch - ServiceWorker');
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
-});
-
-
-
-
-// Activate new cache and delete the old cache.
-
-self.addEventListener('activate', function(event) {
-    console.log('Activate new cache');
-    
+self.addEventListener('activate', function (event) {
     event.waitUntil(
-        caches.keys().then(function(cacheNames) {
+        caches.keys()
+          .then( (cacheNames) => {
             return Promise.all(
-                cacheNames.map(function(cacheName) {
-                    return cacheName.startsWith('r-') && cacheName != version;
-                }).map(function(cacheName) {
-                    return cache.delete(cacheName);
+                cacheNames.filter(function (cacheName) {
+                    return cacheName.startsWith('review-') &&
+                        cacheName != staticCacheName;
+                }).map(function (cacheName) {
+                    return caches.delete(cacheName);
                 })
-               )
-             }).catch(function (error) {
-            // Log this if there is no cache on first run.
+            );
+          })
+    );
+});
 
-            console.log('No old cache to delete');
-            return
-        })
-       );
-     });
 
+
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        return response || fetch(event.request);
+      })
+  );
+});
