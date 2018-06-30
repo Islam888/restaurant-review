@@ -3,7 +3,11 @@ const cacheName = 'review-cache-v2';
 
 // data to catch
 
-const paths = [
+
+// Install and create a new cache.
+
+self.addEventListener('install', function(e) {
+        const paths = [
         './',
         './index.html',
         './restaurant.html',
@@ -39,9 +43,6 @@ const paths = [
         'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
     ];
 
-// Install and create a new cache.
-
-self.addEventListener('install', function(e) {
   console.log('Installing - ServiceWorker');
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
@@ -50,7 +51,7 @@ self.addEventListener('install', function(e) {
     })
     .then(function() {
       console.log('Installation complete');
-    })
+    }).catch(function(error) {console.log(error);});
   );
 });
 
