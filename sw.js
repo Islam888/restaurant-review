@@ -1,4 +1,4 @@
-const cacheName = 'review-cache-v1';
+const cacheName = 'review-cache-v2';
 
 
 // data to catch
