@@ -6,7 +6,7 @@ var cacheName = 'r-v1';
 
 let paths = [
     './',
-    './index.html',
+    'index.html',
     './restaurant.html?',
     './js/dbhelper.js',
     './js/main.js',
@@ -37,8 +37,7 @@ let paths = [
     './img/favicon.png',
     './restaurant-review/', 
     '/https://sionut0122.github.io/restaurant-review/index.html',
-    'https://SIonut0122.github.io/restaurant-review',
-    './sw.js'
+    'https://SIonut0122.github.io/restaurant-review'
     ];
 
 
