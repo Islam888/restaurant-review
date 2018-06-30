@@ -1,5 +1,5 @@
 
-const cacheName = 'r-v1';
+const cacheName = 'review-cache-v1';
 
 
 // data to catch
@@ -77,7 +77,7 @@ self.addEventListener('activate', function(event) {
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.map(function(cacheName) {
-                    return cacheName.startsWith('r-') && cacheName != version;
+                    return cacheName.startsWith('review-') && cacheName != version;
                 }).map(function(cacheName) {
                     return cache.delete(cacheName);
                 })
