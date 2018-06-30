@@ -1,7 +1,7 @@
 const cacheVer = 'review-cache-v1';
 
 
-const assets = [
+const paths = [
   './',
   'index.html',
   'restaurant.html?id=1',
@@ -39,7 +39,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheVer)
       .then( (cache) => {
-        return cache.addAll(assets);
+        return cache.addAll(paths);
       })
   );
 });
