@@ -52,17 +52,6 @@ self.addEventListener('install', function(e) {
 
 
 
-// Feth from the network.
-
-self.addEventListener('fetch', function(e) {
-  console.log('Fetch - ServiceWorker');
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
-});
-
 
 
 
@@ -88,3 +77,16 @@ self.addEventListener('activate', function(event) {
         })
        );
      });
+
+
+// Feth from the network.
+
+self.addEventListener('fetch', function(e) {
+  console.log('Fetch - ServiceWorker');
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
+});
+
