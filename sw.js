@@ -45,7 +45,9 @@ self.addEventListener('install', function(e) {
     caches.open(cacheName).then(function(cache) {
       console.log('Caching - ServiceWorker');
       return cache.addAll(paths);
-    })
+    }).then(function() {
+console.log('installed');
+    });
     
   );
 });
