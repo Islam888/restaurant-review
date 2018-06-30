@@ -35,7 +35,10 @@ const paths = [
   './img/8.jpg',
   './img/9.jpg',
   './img/10.jpg',
-  './img/favicon.png'
+  './img/favicon.png',
+  'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
+  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
 ];
 
 // Install and create a new cache.
