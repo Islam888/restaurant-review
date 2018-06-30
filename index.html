@@ -48,19 +48,20 @@
 
 <script type="text/javascript" src="js/script.js"></script>
    <script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('./sw.js')
-      .then( (registration) => {
-        // Registration was successful
-        console.log('ServiceWorker registered, scope: ', registration.scope);
-      })
-      .catch( (error) => {
-        // registration failed
-        console.log('ServiceWorker registration failed: ', error);
-      });
-
-  }
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('./sw.js').then(reg => {
+        console.log('sw registered');
+        if (reg.installing) {
+            console.log('sw installing');
+        }
+        if (reg.waiting) {
+            console.log('sw waiting');
+        }
+        if (reg.active) {
+            console.log('active');
+        }
+    });
+}
 </script>
 
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
