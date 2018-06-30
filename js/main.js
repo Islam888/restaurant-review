@@ -203,7 +203,20 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 } 
 
-
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('./sw.js').then(reg => {
+        console.log('sw registered');
+        if (reg.installing) {
+            console.log('sw installing');
+        }
+        if (reg.waiting) {
+            console.log('sw waiting');
+        }
+        if (reg.active) {
+            console.log('active');
+        }
+    });
+}
 
 
 /* addMarkersToMap = (restaurants = self.restaurants) => {
