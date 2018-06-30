@@ -4,6 +4,12 @@ const cacheVer = 'review-cache-v1';
 const paths = [
   './',
   'index.html',
+  './css/styles.css',
+  './css/responsive.css',
+  './js/main.js',
+  './js/dbhelper.js',
+  './js/restaurant_info.js',
+  './data/restaurants.json',
   'restaurant.html?id=1',
   'restaurant.html?id=2',
   'restaurant.html?id=3',
@@ -14,12 +20,6 @@ const paths = [
   'restaurant.html?id=8',
   'restaurant.html?id=9',
   'restaurant.html?id=10',
-  './css/styles.css',
-  './css/responsive.css',
-  './js/main.js',
-  './js/dbhelper.js',
-  './js/restaurant_info.js',
-  './data/restaurants.json',
   './img/1.jpg',
   './img/2.jpg',
   './img/3.jpg',
@@ -30,9 +30,8 @@ const paths = [
   './img/8.jpg',
   './img/9.jpg',
   './img/10.jpg',
-  './img/favicon.png',
-  'https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600',
-  'https://fonts.googleapis.com/css?family=Montserrat:600'
+  './img/favicon.png'
+  
 ];
 
 self.addEventListener('install', function(event) {
