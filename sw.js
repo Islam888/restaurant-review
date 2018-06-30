@@ -87,7 +87,8 @@ self.addEventListener('fetch', function(e) {
   console.log('Fetch - ServiceWorker');
   e.respondWith(
     caches.match(e.request).then(function(response) {
-      return response || return fetch(e.request);
+        if (response)
+      return response ||  fetch(e.request);
     })
   );
 });
