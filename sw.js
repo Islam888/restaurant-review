@@ -1,4 +1,4 @@
-const cacheVer = 'review-cache-v1
+const cacheVer = 'review-cache-v1;
 
 
 const assets = [
